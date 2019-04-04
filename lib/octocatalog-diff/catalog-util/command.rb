@@ -72,6 +72,11 @@ module OctocatalogDiff
           cmdline << "--external_nodes=#{Shellwords.escape(@options[:enc])}"
         end
 
+        # node_terminus set and enc is not set?
+        if @options[:node_terminus] && !@options[:enc]
+          cmdline << "--node_terminus=#{Shellwords.escape(@options[:node_terminus])}"
+        end
+
         # Future parser?
         cmdline << '--parser=future' if @options[:parser] == :future
 
