@@ -159,6 +159,8 @@ Usage: octocatalog-diff [command line options]
         --no-ignore-tags             Disable ignoring based on tags
         --ignore-tags STRING1[,STRING2[,...]]
                                      Specify tags to ignore
+        --node-terminus NODE_TERMINUS
+                                     Node terminus to pass to puppet compilation
         --[no-]preserve-environments Enable or disable environment preservation
         --environment STRING         Environment for catalog compilation globally
         --to-environment STRING      Environment for catalog compilation for the to branch
@@ -1004,6 +1006,20 @@ Puppet control repo template, the value of this should be 'hieradata', which is 
     <td valign=top>
       Provide ability to set one or more tags, which will cause catalog-diff
 to ignore any changes for any defined type where this tag is set. (<a href="../lib/octocatalog-diff/cli/options/ignore_tags.rb">ignore_tags.rb</a>)
+    </td>
+  </tr>
+
+  <tr>
+    <td valign=top>
+      <pre><code>--node-terminus NODE_TERMINUS</code></pre>
+    </td>
+    <td valign=top>
+      Node terminus to pass to puppet compilation
+    </td>
+    <td valign=top>
+      Set node_terminus option to pass to puppet during puppet catalog compile. If
+not set the default plain terminus option will be used. This option will be
+overwritten by the --enc options (<a href="../lib/octocatalog-diff/cli/options/node_terminus.rb">node_terminus.rb</a>)
     </td>
   </tr>
 
