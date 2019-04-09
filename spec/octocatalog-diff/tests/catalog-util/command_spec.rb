@@ -103,6 +103,12 @@ describe OctocatalogDiff::CatalogUtil::Command do
       expect(result).not_to match(/--node_terminus=exec/)
     end
 
+    it 'should set node-terminus to yaml when specified' do
+      testobj = OctocatalogDiff::CatalogUtil::Command.new(@default_opts.merge(node_terminus: 'yaml'))
+      result = testobj.puppet_command
+      expect(result).to match(/--node_terminus=yaml/)
+    end
+
     it 'should include --parser=future if that is specified' do
       testobj = OctocatalogDiff::CatalogUtil::Command.new(@default_opts.merge(parser: :future))
       result = testobj.puppet_command
