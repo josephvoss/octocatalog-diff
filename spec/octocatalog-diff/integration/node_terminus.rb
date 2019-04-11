@@ -13,7 +13,7 @@ describe 'a catalog-only operation' do
         '--hiera-config', File.join(@repo_dir, 'config/hiera.yaml'),
         '--catalog-only',
         '-n', 'rspec-node.github.net',
-        '--node-terminus', 'yaml',
+        '--node-terminus', 'dummy',
         '-o', '/tmp/test-catalog.yaml'
       ]
     )
